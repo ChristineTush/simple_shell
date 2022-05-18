@@ -18,7 +18,7 @@ list_t *add_node_end(list_t **head, const char *name, const char *value)
 	trav = *head;
 
 	/* create the new node */
-	new = create_node(name, value, index);
+	new = create_node(name, value);
 	if (new == NULL)
 		return (NULL);
 
@@ -31,7 +31,8 @@ list_t *add_node_end(list_t **head, const char *name, const char *value)
 
 	/* traverse to the end of the list */
 	while (trav->next != NULL)
-	  trav = trav->next;
+		trav = trav->next;
+
 	trav->next = new;
 
 	return (*head);
