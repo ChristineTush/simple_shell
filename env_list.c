@@ -66,18 +66,19 @@ char *_getenv(list_t *env_list, char *name)
 void print_env(list_t *env_list)
 {
 	list_t *trav = env_list;
+	/*unsigned int index = 0;*/
 
 	while (trav != NULL)
 	{
-		/*printf("[%d] ", trav->index);*/
-		/*printf("%s=%s\n", trav->name, trav->value);*/
+	  /*printf("[%d] ", trav->index);*/
+	  /*printf("%s=%s\n", trav->name, trav->value);*/
 
-		write(STDOUT_FILENO, trav->name, _strlen(trav->name) + 1);
-		write(STDOUT_FILENO, "=", 2);
-		write(STDOUT_FILENO, trav->value, _strlen(trav->value) + 1);
-		write(STDOUT_FILENO, "\n", 2);
+	  write(STDOUT_FILENO, trav->name, _strlen(trav->name) + 1);
+	  write(STDOUT_FILENO, "=", 2);
+	  write(STDOUT_FILENO, trav->value, _strlen(trav->value) + 1);
+	  write(STDOUT_FILENO, "\n", 2);
 
-		trav = trav->next;
+	  trav = trav->next;
 	}
 }
 

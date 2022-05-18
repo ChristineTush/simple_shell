@@ -18,7 +18,7 @@ list_t *add_node_end(list_t **head, const char *name, const char *value)
 	trav = *head;
 
 	/* create the new node */
-	new = create_node(name, value);
+	new = create_node(name, value, index);
 	if (new == NULL)
 		return (NULL);
 
@@ -63,7 +63,7 @@ size_t list_len(const list_t *h)
  *
  * Return: address of new node. Otherwise NULL
  */
-list_t create_node(const char *name, const char *value)
+list_t *create_node(const char *name, const char *value)
 {
 	list_t *new;
 
